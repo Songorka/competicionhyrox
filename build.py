@@ -13,8 +13,8 @@ SITE = "https://competicionhyrox.es"
 GA_ID = "G-E2T1MMFZN3"
 # Titular legal y contacto (igual que bebidasartesanales.es). El correo va codificado y lo monta el navegador.
 TITULAR = "Duaba Directorship, S.L."
-CIF = "[CIF]"
-DOMICILIO = "[DOMICILIO]"
+CIF = "B87500443"
+DOMICILIO = "C/ Oficina de Fuensaldaña, 4, 28232 Las Rozas de Madrid"
 CORREO_CODIFICADO = "ZHVhYmFkaXJlY3RvcnNoaXBAZ21haWwuY29t"
 ASUNTO_VENTA = "Compra del dominio competicionhyrox.es"
 
