@@ -1,0 +1,16 @@
+{
+  "_nota": "Fuente de datos del calendario. Fechas tomadas de fuentes públicas; confirmar siempre en la web oficial antes de publicar cambios. 'resumen' vacío = crónica pendiente.",
+  "actualizado": "2026-10-26",
+  "competiciones": [
+    {"id":"barcelona-2026-nov","ciudad":"Barcelona","inicio":"2026-11-11","fin":"2026-11-15","sede":"Fira Barcelona","resumen":""},
+    {"id":"bilbao-2027","ciudad":"Bilbao","inicio":"2027-02-06","fin":"2027-02-07","sede":"Bilbao Exhibition Centre (BEC)","resumen":""},
+    {"id":"madrid-2027","ciudad":"Madrid","inicio":"2027-03-17","fin":"2027-03-21","sede":"IFEMA Madrid","extra":"Primera edición con cinco días de competición","resumen":""},
+    {"id":"malaga-2027","ciudad":"Málaga","inicio":"2027-04-14","fin":"2027-04-18","sede":"FYCMA – Palacio de Ferias y Congresos de Málaga","resumen":""},
+    {"id":"crucero-2026","ciudad":"Crucero desde Palma","inicio":"2026-10-21","fin":"2026-10-25","sede":"A bordo de un crucero con salida desde Palma de Mallorca","resumen":""},
+    {"id":"valencia-2026","ciudad":"Valencia","inicio":"2026-10-15","fin":"2026-10-18","sede":"Feria Valencia","resumen":""},
+    {"id":"tenerife-2026","ciudad":"Tenerife","inicio":"2026-09-04","fin":"2026-09-06","sede":"Centro Internacional de Ferias y Congresos de Tenerife","resumen":"Primera vez que la competición llegó a Canarias."},
+    {"id":"barcelona-2026-may","ciudad":"Barcelona","inicio":"2026-05-14","fin":"2026-05-17","sede":"Fira Barcelona","resumen":""},
+    {"id":"malaga-2026","ciudad":"Málaga","inicio":"2026-04-16","fin":"2026-04-19","sede":"FYCMA – Palacio de Ferias y Congresos de Málaga","resumen":""},
+    {"id":"bilbao-2026","ciudad":"Bilbao","inicio":"2026-02-07","fin":"2026-02-08","sede":"Bilbao Exhibition Centre (BEC)","resumen":""}
+  ]
+}

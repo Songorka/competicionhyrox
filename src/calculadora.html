@@ -1,0 +1,39 @@
+<section class="section">
+<div class="wrap">
+<p class="eyebrow">Herramienta</p>
+<h1>Calculadora de tiempo HYROX</h1>
+<p class="lead" style="margin:20px 0 40px">Una estimación rápida de tu tiempo final, a partir de tu ritmo de carrera y tu nivel en las estaciones.</p>
+<form id="calc" class="calc" onsubmit="return false">
+<div class="calc-form">
+<fieldset>
+<legend>1. Tu ritmo en cada kilómetro</legend>
+<div class="pace">
+<button type="button" id="faster" aria-label="Ritmo 5 segundos más rápido">−</button>
+<output id="pace-out" aria-live="polite">5:30</output>
+<button type="button" id="slower" aria-label="Ritmo 5 segundos más lento">+</button>
+<span class="hint" style="margin:0">min/km</span>
+</div>
+<p class="hint">Pon tu ritmo de rodaje cómodo, no el de un 10K a tope: en la prueba llegas a cada kilómetro cansado.</p>
+</fieldset>
+<fieldset>
+<legend>2. Tu nivel en las estaciones</legend>
+<div class="levels">
+<label><input type="radio" name="nivel" value="principiante"><span>Principiante<small>Primera carrera</small></span></label>
+<label><input type="radio" name="nivel" value="intermedio" checked><span>Intermedio<small>Entreno regular</small></span></label>
+<label><input type="radio" name="nivel" value="avanzado"><span>Avanzado<small>Compito a menudo</small></span></label>
+</div>
+</fieldset>
+</div>
+<div class="calc-out" aria-live="polite">
+<p class="label" style="margin:0;font-size:13px;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted-dark)">Tiempo estimado</p>
+<p class="total" id="o-total">–</p>
+<dl>
+<div class="row"><dt>8 km de carrera</dt><dd id="o-runs">–</dd></div>
+<div class="row"><dt>8 estaciones</dt><dd id="o-st">–</dd></div>
+<div class="row" style="border:0"><dt>Transiciones (Roxzone)</dt><dd id="o-rz">–</dd></div>
+</dl>
+<p>Estimación orientativa basada en tiempos medios por nivel.</p>
+</div>
+</form>
+</div>
+</section>
