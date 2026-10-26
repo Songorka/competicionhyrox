@@ -181,3 +181,5 @@ img{height:auto}
 .cookie button{cursor:pointer;font-family:var(--body)}
 .cookie .btn-ghost{background:none}
 .cookie[hidden]{display:none}
+.site-footer .venta{color:var(--paper);font-weight:500}
+.site-footer .venta a{color:var(--accent)}

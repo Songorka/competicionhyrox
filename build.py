@@ -11,6 +11,21 @@ ROOT = pathlib.Path(__file__).parent
 SITE = "https://competicionhyrox.es"
 # ID de medición de Google Analytics (empieza por G-). Vacío = sin Analytics ni aviso de cookies.
 GA_ID = "G-E2T1MMFZN3"
+# Titular legal y contacto (igual que bebidasartesanales.es). El correo va codificado y lo monta el navegador.
+TITULAR = "Duaba Directorship, S.L."
+CIF = "[CIF]"
+DOMICILIO = "[DOMICILIO]"
+CORREO_CODIFICADO = "ZHVhYmFkaXJlY3RvcnNoaXBAZ21haWwuY29t"
+ASUNTO_VENTA = "Compra del dominio competicionhyrox.es"
+
+def correo(texto="", asunto=""):
+    """Enlace de correo protegido: la dirección no aparece escrita en la página."""
+    import base64
+    usuario, dominio = base64.b64decode(CORREO_CODIFICADO).decode().split("@")
+    visible = texto or f'{usuario}<span class="correo-arroba"> (arroba) </span>{dominio.replace(".", " (punto) ")}'
+    attrs = f' data-asunto="{html.escape(asunto)}"' if asunto else ""
+    attrs += "" if texto else " data-mostrar"
+    return f'<a class="correo" href="/aviso-legal/#titular-de-la-web" data-c="{CORREO_CODIFICADO}"{attrs}>{visible}</a>'
 MESES = ["ene","feb","mar","abr","may","jun","jul","ago","sep","oct","nov","dic"]
 
 PAGES = [
@@ -121,7 +136,8 @@ def layout(title, desc, path, body, current, extra_head=""):
 <footer class="site-footer">
 <div class="wrap">
 <p>Web informativa e independiente, sin relación con la organización oficial de la competición. HYROX es una marca registrada de su titular. Para inscripciones y reglamento, consulta siempre la web oficial.</p>
-<p>© {datetime.date.today().year} competicionhyrox.es · <a href="/aviso-legal/">Aviso legal y cookies</a>{cookie_link}</p>
+<p class="venta">Este dominio está en venta. Si te interesa, escribe a {correo("", ASUNTO_VENTA)}.</p>
+<p>© {datetime.date.today().year} {TITULAR} · <a href="/aviso-legal/">Aviso legal y cookies</a>{cookie_link}</p>
 </div>
 </footer>
 {cookie_box}
@@ -178,7 +194,10 @@ def main():
                 "acceptedAnswer": {"@type": "Answer", "text": a}} for q, a in FAQ]}]}),
         "calendario/index.html": json_ld({"@context": "https://schema.org", "@graph": [event_ld(c) for c in prox]}),
     }
-    repl = {"{{FAQ}}": faq_html, "{{PROXIMA}}": proxima, "{{CAL_PROXIMAS}}": "\n".join(filas) or "<p>No hay pruebas anunciadas por ahora.</p>",
+    repl = {"{{TITULAR}}": TITULAR, "{{CIF}}": CIF, "{{DOMICILIO}}": DOMICILIO,
+            "{{CORREO}}": correo(), "{{CORREO_VENTA}}": correo("", ASUNTO_VENTA),
+            "{{BOTON_VENTA}}": correo("Quiero comprar este dominio", ASUNTO_VENTA),
+            "{{FAQ}}": faq_html, "{{PROXIMA}}": proxima, "{{CAL_PROXIMAS}}": "\n".join(filas) or "<p>No hay pruebas anunciadas por ahora.</p>",
             "{{CAL_PASADAS}}": "\n".join(pasadas), "{{ACTUALIZADO}}": data.get("actualizado", "")}
 
     urls = []

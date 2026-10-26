@@ -58,3 +58,8 @@ document.querySelectorAll('[data-countdown]').forEach(function(el){
   }
   document.querySelectorAll('[data-cookie-reset]').forEach(function(a){a.addEventListener('click',function(e){e.preventDefault();try{localStorage.removeItem(KEY)}catch(x){} if(box)box.hidden=false;});});
 })();
+// Correo protegido: la dirección se monta aquí para que no aparezca escrita en la página
+document.querySelectorAll('a[data-c]').forEach(function(a){
+  var dir=atob(a.dataset.c), q=a.dataset.asunto?'?subject='+encodeURIComponent(a.dataset.asunto):'';
+  a.href='mailto:'+dir+q; if(a.hasAttribute('data-mostrar')) a.textContent=dir;
+});
